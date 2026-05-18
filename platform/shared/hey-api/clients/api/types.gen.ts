@@ -28088,6 +28088,7 @@ export type GetInternalMcpCatalogResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
@@ -28222,6 +28223,7 @@ export type CreateInternalMcpCatalogItemData = {
             [key: string]: UserConfigFieldDefaultInput;
         };
         presetSecretId?: string | null;
+        catalogReinstallRequired?: boolean;
         labels?: Array<{
             key: string;
             value: string;
@@ -28424,6 +28426,7 @@ export type CreateInternalMcpCatalogItemResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
@@ -28721,6 +28724,7 @@ export type GetInternalMcpCatalogItemResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
@@ -28851,6 +28855,7 @@ export type UpdateInternalMcpCatalogItemData = {
             [key: string]: UserConfigFieldDefaultInput;
         };
         presetSecretId?: string | null;
+        catalogReinstallRequired?: boolean;
         labels?: Array<{
             key: string;
             value: string;
@@ -29055,6 +29060,7 @@ export type UpdateInternalMcpCatalogItemResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
@@ -29166,6 +29172,91 @@ export type GetInternalMcpCatalogToolsResponses = {
 };
 
 export type GetInternalMcpCatalogToolsResponse = GetInternalMcpCatalogToolsResponses[keyof GetInternalMcpCatalogToolsResponses];
+
+export type ReinstallInternalMcpCatalogItemData = {
+    body?: never;
+    path: {
+        id: string;
+    };
+    query?: never;
+    url: '/api/internal_mcp_catalog/{id}/reinstall';
+};
+
+export type ReinstallInternalMcpCatalogItemErrors = {
+    /**
+     * Default Response
+     */
+    400: {
+        error: {
+            message: string;
+            type: 'api_validation_error';
+            internal_code?: string;
+        };
+    };
+    /**
+     * Default Response
+     */
+    401: {
+        error: {
+            message: string;
+            type: 'api_authentication_error';
+            internal_code?: string;
+        };
+    };
+    /**
+     * Default Response
+     */
+    403: {
+        error: {
+            message: string;
+            type: 'api_authorization_error';
+            internal_code?: string;
+        };
+    };
+    /**
+     * Default Response
+     */
+    404: {
+        error: {
+            message: string;
+            type: 'api_not_found_error';
+            internal_code?: string;
+        };
+    };
+    /**
+     * Default Response
+     */
+    409: {
+        error: {
+            message: string;
+            type: 'api_conflict_error';
+            internal_code?: string;
+        };
+    };
+    /**
+     * Default Response
+     */
+    500: {
+        error: {
+            message: string;
+            type: 'api_internal_server_error';
+            internal_code?: string;
+        };
+    };
+};
+
+export type ReinstallInternalMcpCatalogItemError = ReinstallInternalMcpCatalogItemErrors[keyof ReinstallInternalMcpCatalogItemErrors];
+
+export type ReinstallInternalMcpCatalogItemResponses = {
+    /**
+     * Default Response
+     */
+    200: {
+        success: boolean;
+    };
+};
+
+export type ReinstallInternalMcpCatalogItemResponse = ReinstallInternalMcpCatalogItemResponses[keyof ReinstallInternalMcpCatalogItemResponses];
 
 export type DeleteInternalMcpCatalogItemByNameData = {
     body?: never;
@@ -29869,6 +29960,7 @@ export type GetCatalogChildrenResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
@@ -30086,6 +30178,7 @@ export type CreateCatalogChildResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
@@ -30303,6 +30396,7 @@ export type UpdateCatalogChildResponses = {
             [key: string]: UserConfigFieldDefault;
         };
         presetSecretId: string | null;
+        catalogReinstallRequired: boolean;
         createdAt: string;
         updatedAt: string;
         labels: Array<{
